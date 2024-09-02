@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   execute:
@@ -26,3 +27,4 @@ jobs:
           --document-name "AWS-RunPowerShellScript" \
           --targets "Key=instanceids,Values=i-0f1f5556800682384" \
           --parameters 'commands=["whoami"]'
+
