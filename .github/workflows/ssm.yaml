@@ -34,6 +34,6 @@ jobs:
           --targets "Key=instanceids,Values=i-0f1f5556800682384" \
           --parameters '{
             "commands": [
-              "Start-Process powershell.exe -ArgumentList ''-NoProfile -Command \"Invoke-AtomicTest '${TTP}' > output.log 2>&1\"'' -WindowStyle Hidden"
+              "Start-Process powershell.exe -ArgumentList \\"-NoProfile -Command Invoke-AtomicTest '${TTP}' > output.log 2>&1\\" -WindowStyle Hidden"
             ]
           }'
