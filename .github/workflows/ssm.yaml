@@ -5,6 +5,11 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      ttp:
+        description: 'TTP ID to execute'
+        required: true
+        default: 'T1558.004'
 
 jobs:
   execute:
@@ -23,8 +28,8 @@ jobs:
 
     - name: Execute SSM Command
       run: |
+        TTP=${{ github.event.inputs.ttp }}
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
           --targets "Key=instanceids,Values=i-0f1f5556800682384" \
-          --parameters 'commands=["Invoke-AtomicTest T1558.004"]'
-
+          --parameters "commands=[\"Invoke-AtomicTest ${TTP}\", \"Invoke-AtomicTest ${TTP} -Cleanup\"]"
