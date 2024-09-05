@@ -32,4 +32,4 @@ jobs:
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
           --targets "Key=instanceids,Values=i-0f1f5556800682384" \
-          --parameters "commands=[\"Invoke-AtomicTest ${ttp}\"]"
+          --parameters "commands=["Invoke-AtomicTest ${ttp}"]"
