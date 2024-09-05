@@ -9,7 +9,7 @@ on:
       ttp:
         description: 'TTP ID to execute'
         required: true
-        default: 'T1558.004'
+        default: 'T1558.003'
 
 jobs:
   execute:
