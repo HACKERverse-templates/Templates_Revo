@@ -31,5 +31,5 @@ jobs:
         TTP=${{ github.event.inputs.ttp }}
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
-          --targets "Key=instanceids,Values=i-0f1f5556800682384" \
+          --targets "Key=instanceids,Values=i-077132ed5727389c4" \
           --parameters '{"commands":["whoami"]}'
