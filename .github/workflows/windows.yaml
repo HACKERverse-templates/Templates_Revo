@@ -6,6 +6,10 @@ on:
       - main
   workflow_dispatch:
     inputs:
+      instance-id:
+        description: 'instance-id'
+        required: true
+        default: ''
       ttp:
         description: 'TTP ID to execute'
         required: true
@@ -31,5 +35,5 @@ jobs:
         TTP=${{ github.event.inputs.ttp }}
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
-          --targets "Key=instanceIds,Values=i-077132ed5727389c4" \
+          --targets "Key=instanceIds,Values=${INSTANCE-ID}" \
           --parameters '{"commands":["\"Invoke-AtomicTest '${TTP}'\""]}'
