@@ -35,5 +35,5 @@ jobs:
         TTP=${{ github.event.inputs.ttp }}
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
-          --targets "Key=instanceIds,Values=${INSTANCE-ID}" \
+          --targets "Key=instanceIds,Values='${INSTANCE-ID}'" \
           --parameters '{"commands":["Invoke-AtomicTest '${TTP}'"]}'
