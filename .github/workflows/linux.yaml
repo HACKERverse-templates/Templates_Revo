@@ -37,4 +37,5 @@ jobs:
         aws ssm send-command \
           --document-name "AWS-RunShellScript" \
           --targets "Key=instanceIds,Values=${INSTANCE_ID}" \
-          --parameters '{"commands":["'/bin/bash ${TTP}'"]}'
+          --parameters '{"commands":["/bin/bash -c '\'''"${TTP}"'\''"]}'
+
