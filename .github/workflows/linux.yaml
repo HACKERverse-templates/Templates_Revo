@@ -35,6 +35,6 @@ jobs:
         TTP=${{ github.event.inputs.ttp }}
         INSTANCE_ID=${{ github.event.inputs.instance-id }}
         aws ssm send-command \
-          --document-name "AWS-RunPowerShellScript" \
+          --document-name "AWS-RunShellScript" \
           --targets "Key=instanceIds,Values=${INSTANCE_ID}" \
           --parameters '{"commands":["'${TTP}'"]}'
