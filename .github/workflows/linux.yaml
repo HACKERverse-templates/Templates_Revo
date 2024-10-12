@@ -38,6 +38,7 @@ jobs:
       run: |
         TARGET_ACCOUNT_ID=${{ github.event.inputs.account-id }}
         HARD_CODED_ACCOUNT_ID="730335268696"
+        echo $HARD_CODED_ACCOUNT_ID
 
         if [ "$TARGET_ACCOUNT_ID" != "$HARD_CODED_ACCOUNT_ID" ]; then
           echo "Account IDs do not match. Assuming role in account $TARGET_ACCOUNT_ID..."
