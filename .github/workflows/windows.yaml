@@ -69,4 +69,4 @@ jobs:
         aws ssm send-command \
           --document-name "AWS-RunPowerShellScript" \
           --targets "Key=instanceIds,Values=${INSTANCE_ID}" \
-          --parameters '{"commands":["Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Invoke-AtomicRedTeam\2.1.0\Invoke-AtomicTest.ps1'; Invoke-AtomicTest '${TTP}'; Invoke-AtomicTest '${TTP}' -Cleanup"]}'
+          --parameters '{"commands":["Import-Module 'C:\Program Files\WindowsPowerShell\Modules\Invoke-AtomicRedTeam\2.1.0\Public\Invoke-AtomicTest.ps1'; Invoke-AtomicTest '${TTP}'; Invoke-AtomicTest '${TTP}' -Cleanup"]}'
